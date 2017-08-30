@@ -1,0 +1,29 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row" id="form-title">
+    <%= f.label "제목", class: "col-md-1" %>
+    <%= f.text_field :title, class: "col review_form" %>
+  </div>
+
+  <div class="field row" id="form-content">
+    <%= f.label "내용", class: "col-md-1" %>
+    <%= f.text_area :content, class: "col review_form" %>
+  </div>
+
+  <div class="row check_form">
+    <div class="actions ml-auto">
+      <%= image_submit_tag("check.png", id: "check_button")%>
+    </div>
+  </div>
+<% end %>

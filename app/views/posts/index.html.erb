@@ -1,0 +1,23 @@
+<p id="category">
+  게시글 목록
+</p>
+
+<hr>
+
+<% @posts.each do |post| %>
+  <div class="row">
+    <p class="col-md-1 catalogue catalogue-title">
+      <%= post.id %>
+    </p>
+    <p class="col catalogue">
+      <%= link_to post.title, post, class: "col" %>
+    </p>
+  </div>
+  <hr>
+<% end %>
+
+<br>
+
+<div class="container row">
+  <%= link_to '새 리뷰 작성하기', new_post_path, style: "margin-top:5px;" %>
+</div>

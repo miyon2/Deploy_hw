@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+.container {
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+
+body {
+ background-image: url(/assets/re_view_background.png);
+ font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+
+/* navbar */
+nav {
+  background-color: #FAF2F1!important;
+}
+
+#site-title {
+  font-size: 30px;
+  padding-top: 3px!important;
+  padding-bottom: 0px!important;
+}
+
+.option-title{
+ font-size: 21px;
+ padding-top: 4px!important;
+ padding-bottom: 0px!important;
+}
+
+.yield{
+ padding-top: 20px;
+}
+
+/* start page css */
+#description{
+  margin-left: 0px;
+  padding-top: 25px;
+  padding-bottom: 17px;
+  font-size: 35px;
+}
+#category{
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 35px;
+  margin-left: 0px;
+}
+
+/* index.hteml.erb */
+
+.catalogue{
+  margin-bottom: 0px;
+}
+
+/* _form.html.erb */
+.review_form{
+  border-radius: 2px;
+  border-style: none;
+}
+
+#form-title{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#form-content{
+  height: 300px;
+}
+
+.check_form{
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#check_button{
+  margin-right: 20px;
+}
+
+#back_button{
+  margin-top: 0px;
+}
+
+/* index.html.erb */
+.catalogue-title{
+  font-size: 15px!important;
+  text-align: center;
+  border-right: solid 1px #ccc;
+}

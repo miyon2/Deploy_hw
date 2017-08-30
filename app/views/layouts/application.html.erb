@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>잡생각투머치토커</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Bree Serif -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%= link_to '잡생각투머치토커', root_path, class: "navbar-brand", id: "site-title" %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to '글목록', posts_path, class: "nav-link option-title" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '내정보', edit_user_registration_path, class: "nav-link option-title" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '로그아웃', destroy_user_session_path, method: :delete, data: { confirm: "로그아웃 하시겠습니까?" }, class: "nav-link option-title" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to '글목록', posts_path, class: "nav-link option-title" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "페이스북으로 로그인하기", user_facebook_omniauth_authorize_path, class: "nav-link option-title" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '가입하기', new_user_registration_path, class: "nav-link option-title" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '로그인', new_user_session_path, class: "nav-link option-title" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container yield">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
